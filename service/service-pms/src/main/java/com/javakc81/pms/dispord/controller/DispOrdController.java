@@ -15,6 +15,7 @@ import java.util.List;
 @Api(tags = "调度指令库 - 控制层")
 @RestController
 @RequestMapping("/pms/dispord")
+@CrossOrigin
 public class DispOrdController {
 
 
