@@ -48,6 +48,12 @@ public class DispOrdService extends BaseService<DispOrdDao, DispOrd> {
              */
             simpleSpecificationBuilder.and("orderName", ":", dispOrdQuery.getOrderName());
         }
+        if(!StringUtils.isEmpty(dispOrdQuery.getBeginDate())) {
+            simpleSpecificationBuilder.and("gmtCreate", "ge", dispOrdQuery.getBeginDate());
+        }
+        if(!StringUtils.isEmpty(dispOrdQuery.getEndDate())) {
+            simpleSpecificationBuilder.and("gmtCreate", "lt", dispOrdQuery.getEndDate());
+        }
         Page page = dispOrdDao.findAll(simpleSpecificationBuilder.getSpecification(), PageRequest.of(pageNo - 1, pageSize));
         return page;
     }

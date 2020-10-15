@@ -36,8 +36,8 @@ public class DispOrdController {
     }
 
     @ApiOperation(value = "带条件的分页查询")
-    @GetMapping("{pageNo}/{pageSize}")
-    public APICODE findPageDispOrd(DispOrdQuery dispOrdQuery,
+    @PostMapping("{pageNo}/{pageSize}")
+    public APICODE findPageDispOrd(@RequestBody(required = false) DispOrdQuery dispOrdQuery,
                                    @PathVariable(name = "pageNo") int pageNo,
                                    @PathVariable(name = "pageSize") int pageSize) {
 
