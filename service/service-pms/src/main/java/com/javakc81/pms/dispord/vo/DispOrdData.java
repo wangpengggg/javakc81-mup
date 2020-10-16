@@ -16,7 +16,7 @@ public class DispOrdData {
     private int specType;
 
     @ExcelProperty(value = "指令类型", index = 2)
-    private String priority;
+    private int priority;
 
     @ExcelProperty(value = "指令描述", index = 3)
     private String orderDesc;

@@ -126,4 +126,15 @@ public class DispOrdController {
         }
     }
 
+    @ApiOperation(value = "列表导出", notes = "使用POI技术进行列表导出")
+    @GetMapping("exportExcel")
+    public void exportExcel(HttpServletResponse response) {
+        dispOrdService.exportExcel(response);
+    }
+
+    @ApiOperation(value = "列表导入", notes = "使用POI技术进行列表导入")
+    @PostMapping("importExcel")
+    public void importExcel(MultipartFile file) {
+        dispOrdService.importExcel(file);
+    }
 }

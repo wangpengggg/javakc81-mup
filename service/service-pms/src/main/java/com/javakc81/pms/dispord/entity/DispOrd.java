@@ -36,7 +36,7 @@ public class DispOrd {
 
     @Column(name = "priority")
     @ApiModelProperty(value = "指令优先级")
-    private String priority;
+    private int priority;
 
     @Column(name = "order_desc")
     @ApiModelProperty(value = "指令描述")
